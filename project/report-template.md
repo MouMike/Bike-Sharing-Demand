@@ -28,7 +28,10 @@ The additional feature reduced the bias in the model, and therefore, improving t
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-TODO: Add your explanation
+The model performance worsened. Increasing the number of iterations to a very high number improved the predictions/scores but minimally. The predictions were still worse off compared to those prior to hyperparameter tuning. My two key takeaways were the following:
+
+- Autogluon hyperparameters are already very well optimised and, therefore, it is very difficult to beat the performance of the models by tuning the hyperparameters manually.
+- Tuning the hyperparameters manually limits them to specific values and also, autogluon is limited to only the models that are listed. Autogluon utilises many models and many hyperparameters and only selecting a few models, and tuning a few hyperparameters, constraints autogluon from performing to its fullest capability.
 
 ### If you were given more time with this dataset, where do you think you would spend more time?
 I would spend more time feature engineering. Adding a new feature to the dataset drastically improved the predictions and, therefore, it would likely be benficial to discover which other new features to add.
@@ -36,9 +39,9 @@ I would spend more time feature engineering. Adding a new feature to the dataset
 ### Create a table with the models you ran, the hyperparameters modified, and the kaggle score.
 |model|hpo1|hpo2|hpo3|score|
 |--|--|--|--|--|
-|initial|600|?|?|1.41128|
-|add_features|600|?|?|0.48827|
-|hpo|1800|?|?|?|
+|initial|100|31|0.1|1.41128|
+|add_features|100|31|0.1|0.48827|
+|hpo|3000|100|0.05|0.52200|
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
