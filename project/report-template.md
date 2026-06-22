@@ -45,15 +45,20 @@ I would spend more time feature engineering. Adding a new feature to the dataset
 
 ### Create a line plot showing the top model score for the three (or more) training runs during the project.
 
-TODO: Replace the image below with your own.
-
 ![model_train_score.png](img/model_train_score.png)
 
 ### Create a line plot showing the top kaggle score for the three (or more) prediction submissions during the project.
 
-TODO: Replace the image below with your own.
-
 ![model_test_score.png](img/model_test_score.png)
+
+### Bar chart comparing the performance of various models on the dataset.
+The best performing algorithm was the Tabular Deep Learning Model (TABM) which utilizes neural networks to produce predictions. Second was the the Categorical Boosting algorithm (CAT). CAT is known to be good with categorical datasets. The dataset contained to categorical features, namely, weather and season, and categorising these two features helps an algorithm like CAT to perform better on the data. The third best performing algorithm wat the Gradient Boosting Machine algorithm (GBM) which is a tree ensemble where trees are built sequentially and each new tree improving the performance of the previous trees. GBM has an edge over Random Forest (RF)because RF builts trees in parallel meaning that the trees do not improve each others performances.
+
+The worst performing algorithm was the Linear Regression algorithm (LR) and the K-Nearest Neighbors (KNN) was the second worst. The very poor perfomance by the LR is an indication that the data points are non-linear. KNN is a classification algorithm and therefore it is expected to perform poorly on a regression problem.
+
+The figure below shows the visual comparison of the models, where the high negative scores indicate the worst performing algorithms and the low negative scores (closer to zero) indicate the best perfoming models.
+
+![model_score_comparison.png](img/model_score_comparison.png)
 
 ## Summary
 TODO: Add your explanation
