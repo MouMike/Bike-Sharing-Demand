@@ -3,14 +3,14 @@
 
 ## Initial Training
 ### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-Before submitting the predictions, all negative predictions had to be set to zero because Kaggle could not accept negative values for "count", which made practical sense since count cannot be negative.
+Before submitting the predictions, all negative predictions had to be set to zero because Kaggle could not accept negative values for `count`, which made practical sense since count cannot be negative.
 
 ### What was the top ranked model that performed?
-The top ranked model was 'WeightedEnsemble_L2'.
+The top ranked model was `WeightedEnsemble_L2`.
 
 ## Exploratory data analysis and feature creation
 ### What did the exploratory analysis find and how did you add additional features?
-The exploratory data analysis found the distribution of data for each feature. This was achieved by generating a histogram for each feature. Through the 'train.describe()' command, the findings below were made:
+The exploratory data analysis found the distribution of data for each feature. This was achieved by generating a histogram for each feature. Through the `train.describe()` command, the findings below were made:
 - datetime - demand was generally equally distributed across the different dates.
 - season - demand was very consistent across all seasons, with slightly lower demand in Spring than in other seasons. 
 - holiday - the demand was almost entirely on non-holiday days. This is in most likelihood because there are only a few holidays in a year.
@@ -23,7 +23,7 @@ The exploratory data analysis found the distribution of data for each feature. T
 - registered - no registered user rentals were initiated on most days, however, there was significantly more registered user rentals were initiated compared to non-registered user rentals.
 
 ~Correlation Matrix~
-The figure below shows the correlation between different features in the dataset. An extremely high correlation was found between 'registered' and 'count'. A possible explanation is that the feature 'registered' was derived from 'count', that is, 'registered' was only known after a bike ride was booked, meaning that 'registered' was not input data to the bike sharing demand. The same argument applies for 'casual'. Features with an extremely high correlation to the target value signal data leakage and, therefore, another reason why it was necessary to remove them from the dataset before model training.
+The figure below shows the correlation between different features in the dataset. An extremely high correlation was found between `registered` and `count`. A possible explanation is that the feature `registered` was derived from `count`, that is, `registered` was only known after a bike ride was booked, meaning that `registered` was not input data to the bike sharing demand. The same argument applies for `casual`. Features with an extremely high correlation to the target value signal data leakage and, therefore, another reason why it was necessary to remove them from the dataset before model training.
 The rest of the correlations were between -0.5 and 0.5 and did not raise any concerns.
 
 ![correlation_heatmap.png](correlation_heatmap.png)
@@ -39,12 +39,12 @@ From the plots above, the following findings are made:
 - On weekends, peak demands were recorded around lunch hours whereas demand peaked early morning and late afternoon for working days. The peak times on working days corresponded with times people typically travel/commute to work and travel/commute back home after work or school. A much smaller peak is also observed around lunchtime on a working day.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
-The model perfomed significantly better after adding an additional feature, increasing the best model's score_val from '-121.8' to '-30.9'. The Kaggle score also showed significant improvement, moving from '1.41288' to '0.51764'.
+The model perfomed significantly better after adding an additional feature, increasing the best model's score_val from `-121.8` to `-30.9`. The Kaggle score also showed significant improvement, moving from `1.41288` to `0.51764`.
 The additional feature reduced the bias in the model, and therefore, improving the predictions.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
-The model showed only a slight improvement in performance after hyperparameter tuning. An improved kaggle score of '0.50629' was achieved from the '0.51764' achieved after adding an additional feature. A minuteness of the improvement can be attributed to the following:
+The model showed only a slight improvement in performance after hyperparameter tuning. An improved kaggle score of `0.50629` was achieved from the `0.51764` achieved after adding an additional feature. A minuteness of the improvement can be attributed to the following:
 
 - Autogluon hyperparameters are already very well optimised and, therefore, it is very difficult to beat the performance of the models by manually tuning the hyperparameters.
 - Tuning the hyperparameters manually limits them to specific values and also, autogluon is limited to only the models that are listed. Autogluon utilises many models and many hyperparameters and only selecting a few models, and tuning a few hyperparameters, constraints autogluon from performing to its fullest capability.
@@ -78,14 +78,14 @@ The worst performing algorithm was the Linear Regression (LR) algorithm and the 
 
 The figure below shows the visual comparison of the models, where the high negative scores indicate the worst performing algorithms and the low negative scores (closer to zero) indicate the best perfoming models.
 
-![model_score_comparison.png](model_score_comparison.png)
+![model_comparison.png](model_score_comparison.png)
 
 ## Summary
 The purpose of this project was to use the AutoGluon library to train several machine learning models for the Bike Sharing Demand project on kaggle. AutoGluon is an AutoML framework and its strength is in its ability to train and ensemble multiple models in order to produce high-accuracy predictions.
 
-The first step was to input raw data into the AutoGluon TablePredictor with default parameters and to output a set of initial predictions. The best-ranked model was the 'WeightedEnsemble_L2' and, therefore, this was the model that AutoGluon used to produce predictions. Before submitting the predictions on kaggle for scoring, it was necessary to set the negative values to zero because 'count' cannot be negative. The kaggle score was the retrieved to check how the model performed.
+The first step was to input raw data into the AutoGluon TablePredictor with default parameters and to output a set of initial predictions. The best-ranked model was the `WeightedEnsemble_L2` and, therefore, this was the model that AutoGluon used to produce predictions. Before submitting the predictions on kaggle for scoring, it was necessary to set the negative values to zero because `count` cannot be negative. The kaggle score was the retrieved to check how the model performed.
 
 Several refinements, such as feature engineering, hyperparameter tuning and change in the evaluation metric, were performed in an attempt to improve the quality of the predictions, and the following findings were made:
-- adding a new 'month' feature greatly improved performance.
+- adding a new `month` feature greatly improved performance.
 - manual modification of the hyperparameters only slighly improved model performances, testament to how well optimised AutoGluon hyperparameters are, and also, the high level of skill that is required to improve, or beat, its performance through manual hyperparameter tuning.
 - changing the evaluation metric only slightly altered the model performances. 
