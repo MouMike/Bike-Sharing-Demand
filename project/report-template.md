@@ -38,7 +38,7 @@ Four time series graphs were plotted - one for the entire dataset, one for a one
 From the plots above, the following findings are made:
 - The bike sharing demand is seasonal with higher demands recorded in summer months compared to winter months. The general trend also indicates that the demand was increasing over time.
 - The month of May was selected to study the bike sharing demand over a typical one month period. The demand was generally flat throughout the month with relatively higher demands recorded on working days compared to weekends.
-- On weekends, peak demands were recorded around lunch hours whereas demand peaked early morning and late afternoon for working days. The peak times on working days corresponded with times people typically travel/commute to work and travel/commute back home after work or school. A much smaller peak is also observed around lunchtime on a working day.
+- On weekends, peak demands were recorded in the afternoons whereas demand peaked during morning and evening rush hours on working days. A much smaller peak was also observed around lunchtime on a working day.
 
 ### How much better did your model preform after adding additional features and why do you think that is?
 The model perfomed significantly better after the addidtion of the `hour` feature, increasing the best model's score_val from `-121.8` to `-30.9`. The kaggle score also showed significant improvement, moving from `1.41288` to `0.51764`. Further features were added, namely:
