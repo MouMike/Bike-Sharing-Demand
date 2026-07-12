@@ -48,7 +48,7 @@ The model perfomed significantly better after the addidtion of the `hour` featur
 - `wind_class` - categorized windspeed into very windy (`windspeed` > 25) and mild wind (`windspeed` <= 25)
 - `humid_class` - categorized humidity into very humid (`humidity` > 50) and not humid (`humidity` <= 50)
 
-Addition of these new features further improved the predictions, improving the kaggle score from `0.51764` to `0.50205` and the top model score decreased from `-30.9` to `-32.6` . Adding new features reduced the bias in the model, and therefore, improving the predictions. The poorer top model score may, perhaps, mean that slight overfitting was detected which causes the models to perform better on the training data but give poorer predictions on the test data.
+Addition of these new features further improved the predictions, improving the kaggle score from `0.51764` to `0.49870` and the top model score decreased from `-30.9` to `-32.8` . Adding new features reduced the bias in the model, and therefore, improving the predictions. The poorer top model score may, perhaps, mean that slight overfitting was detected which causes the models to perform better on the training data but give poorer predictions on the test data.
 
 ## Hyper parameter tuning
 ### How much better did your model preform after trying different hyper parameters?
