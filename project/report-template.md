@@ -91,7 +91,7 @@ The figure below shows the visual comparison of the models, where the high negat
 ## Summary
 The purpose of this project was to use the AutoGluon library to train several machine learning models for the Bike Sharing Demand project on kaggle. AutoGluon is an AutoML framework and its strength is in its ability to train and ensemble multiple models in order to produce high-accuracy predictions.
 
-The first step was to input raw data into the AutoGluon TablePredictor with default parameters and to output a set of initial predictions. The best-ranked model was the `WeightedEnsemble_L2` and, therefore, this was the model that AutoGluon used to produce predictions. Before submitting the predictions on kaggle for scoring, it was necessary to set the negative values to zero because `count` cannot be negative. The kaggle score was the retrieved to check how the model performed.
+The first step was to input raw data into the AutoGluon TabularPredictor with default parameters and to output a set of initial predictions. The best-ranked model was the `WeightedEnsemble_L2` and, therefore, this was the model that AutoGluon used to produce predictions. Before submitting the predictions on kaggle for scoring, it was necessary to set the negative values to zero because `count` cannot be negative. The kaggle score was the retrieved to check how the model performed.
 
 Several refinements, such as feature engineering, hyperparameter tuning and change in the evaluation metric, were performed in an attempt to improve the quality of the predictions, and the following findings were made:
 - adding a new `month` feature greatly improved performance.
